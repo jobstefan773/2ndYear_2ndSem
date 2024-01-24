@@ -1,6 +1,6 @@
 # 2ndYear_2ndSem
 
-this contains my projects during 1st Semester of 2nd Year!
+this contains my projects during 2nd Semester of 2nd Year!
 
     - 
     - 
