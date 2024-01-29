@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.frontpage {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+}
+.frontpage img {
+    width: auto;
+    height: 500px;
+    position: absolute;
+    right: 200px;
+}
