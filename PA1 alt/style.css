@@ -55,6 +55,8 @@ body {
     height: 220px;
     flex-shrink: 0;
     position: relative;
+    filter: brightness(.5);
+    transition: .5s;
 }
 .thumbnail .item img{
     width: 100%;
@@ -62,12 +64,15 @@ body {
     object-fit: cover;
     border-radius: 20px;
 }
+.thumbnail .item.active{
+    filter: brightness(1);
+}
 .thumbnail .item .content{
     position: absolute;
     bottom: 10px;
     left: 10px;
     right: 10px;
-}
+}   
 .thumbnail .item .content .title{
     font-weight: bold;
 }
@@ -98,4 +103,26 @@ body {
 }
 .carousel .list .item:nth-child(1){
     z-index: 1;
+}
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .synopsis{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: slideIn 0.5s 1s linear 1 forwards;
+}
+@keyframes slideIn{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(0);
+    }
+}
+.carousel .list .item:nth-child(1) .title{
+    animation-delay: 1.2;
+
+}
+.carousel .list .item:nth-child(1) .synopsis{
+    animation-delay: 1.4s;
+    
 }
