@@ -120,9 +120,7 @@ body {
 }
 .carousel .list .item:nth-child(1) .title{
     animation-delay: 1.2;
-
 }
 .carousel .list .item:nth-child(1) .synopsis{
-    animation-delay: 1.4s;
-    
+    animation-delay: 1.4s;  
 }
