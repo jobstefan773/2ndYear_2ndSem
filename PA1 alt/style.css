@@ -82,6 +82,7 @@ body {
 }
 .thumbnail .item.active{
     filter: brightness(1);
+    transform: scale(1.05);
 }
 .thumbnail .item .content{
     position: absolute;
