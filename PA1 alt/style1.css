@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: poppins;
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-size: 12px;
+}
+
+
+/* Carousel */
+/* .carousel {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+.carousel .list .item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 30%;
+    width: 1140px;
+    max-width: 80%;
+    left: 40%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: white;
+    text-shadow: 0 5px 10px black;
+}
+.carousel .list .item .content .title{
+    font-weight: bold;
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+.carousel .list .item .content .year{
+    margin-bottom: -5px;
+}
+.carousel .list .item .content .award{
+    margin-bottom: 7px;
+    font-size: 18px;
+    color: orange;
+    font-weight: bold;
+}
+.carousel .list .item .content .synopsis{
+    line-height: 18px;
+} */
+
+
+/* TEST */
+.carousel {
+    height: 100vh;
+    position: relative;
+}
+.carousel .list .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 5s;
+}
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.carousel .list .item .content {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.carousel .list .item .content .title{
+    font-weight: bold;
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+.carousel .list .item .content .year{
+    margin-bottom: -5px;
+}
+.carousel .list .item .content .award{
+    margin-bottom: 7px;
+    font-size: 18px;
+    color: orange;
+    font-weight: bold;
+}
+.carousel .list .item .content .synopsis{
+    line-height: 18px;
+}
+
+
+/* Thumbnail */
+.thumbnail {
+    position: absolute;
+    bottom: 50px;
+    left : 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+    filter: brightness(.5);
+    transition: .5s;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item.active{
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}   
+.thumbnail .item .content .title{
+    font-weight: bold;
+}
+
+
+/* Arrows */
+.arrows {
+    position: absolute;
+    bottom: 10px;
+    left: -25px;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 800px;
+    align-items: center;
+}
+.arrows button {
+    width: 20px;
+    height: 200px;
+    background-color: transparent;
+    border: none;
+    color: rgba(95, 89, 89, 0.74);
+    font-weight: bold;
+    font-size: large;
+    transition: .5s;
+}
+.arrows button:hover {
+    background-color: rgba(75, 70, 70, 0.486);
+}
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* Animation */
+.carousel .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.carousel .list .item.active:nth-child(1) .year,
+.carousel .list .item.active:nth-child(1) .title,
+.carousel .list .item.active:nth-child(1) .award,
+.carousel .list .item.active:nth-child(1) .synopsis{
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: slideIn 0.5s .7s ease-in-out 1 forwards;
+}
+.carousel .list .item.active:nth-child(1) .year{
+    animation-delay: 1.3s;  
+}
+.carousel .list .item.active:nth-child(1) .title{
+    animation-delay: 1.6s;
+}
+.carousel .list .item.active:nth-child(1) .award{
+    animation-delay: 1.9s;  
+}
+.carousel .list .item.active:nth-child(1) .synopsis{
+    animation-delay: 2s;  
+}
+
+
+/* .carousel .list .item:nth-child(1) .year,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .award,
+.carousel .list .item:nth-child(1) .synopsis{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: slideIn 0.5s 1s linear 1 forwards;
+}
+@keyframes slideIn{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(0);
+    }
+}
+.carousel .list .item:nth-child(1) .year{
+    animation-delay: 1.3s;  
+}
+.carousel .list .item:nth-child(1) .title{
+    animation-delay: 1.6s;
+}
+.carousel .list .item:nth-child(1) .award{
+    animation-delay: 1.9s;  
+}
+.carousel .list .item:nth-child(1) .synopsis{
+    animation-delay: 2s;  
+} */
