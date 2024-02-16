@@ -1,0 +1,40 @@
+.frontpage {
+    height: 100vh;
+    position: relative;
+}
+.text {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    justify-content: center;
+    top: 38%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.text h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 5em;
+    letter-spacing: 20px;
+} 
+@media screen and (max-width: 768px) {
+    .text h1 {
+        font-size: 3em;
+        letter-spacing: 10px;
+    }
+    
+}
+.text p {
+    text-align: center;
+    margin: 0%;
+    color: orange;
+    font-weight: 500;
+    font-style: italic;
+}
+.frontpage video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+    z-index: 0;
+}
